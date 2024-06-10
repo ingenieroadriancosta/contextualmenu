@@ -55,7 +55,12 @@ reg add ($subMenu0+"\command") /f /ve /d ($command0+"  -noexit -command Set-Loca
 $addsub1="123"
 $subMenu1=("HKEY_CLASSES_ROOT\Directory\Background\ContextMenus\Menu"+$nameOfMain+"\shell\open"+$addsub1)
 $icon1=""
-$command1="powershell.exe mvn clean install; pause"
+$command1="powershell.exe mvn clean install;
+
+
+pause"
+
+
 $title1="mvn clean install"
 reg delete $subMenu1
 reg delete ($subMenu1+"\command")
