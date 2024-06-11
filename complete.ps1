@@ -40,7 +40,13 @@ reg add ("HKEY_CLASSES_ROOT\Directory\Background\shell\"+$nameOfMain) /v Extende
 $addsub0=""
 $subMenu0=("HKEY_CLASSES_ROOT\Directory\Background\ContextMenus\Menu"+$nameOfMain+"\shell\open"+$addsub0)
 $icon0=""
-$command0="powershell.exe mvn clean ; pause"
+$command0="powershell.exe mvn clean ; 
+
+
+pause
+"
+
+
 $title0="mvn clean"
 reg delete ($subMenu0+"\command")
 reg delete $subMenu0
@@ -49,16 +55,18 @@ reg add $subMenu0 /v Icon /t REG_SZ /d ($icon0) /f
 
 # Set default key value "(Default)"
 reg add ($subMenu0+"\command") /f /ve /d ($command0+"  -noexit -command Set-Location '%V'")
+
 # *X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X
 # *X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X
 # *X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X
 $addsub1="123"
 $subMenu1=("HKEY_CLASSES_ROOT\Directory\Background\ContextMenus\Menu"+$nameOfMain+"\shell\open"+$addsub1)
 $icon1=""
-$command1="powershell.exe mvn clean install;
+$command1="powershell.exe mvn clean install ;
 
 
-pause"
+pause
+"
 
 
 $title1="mvn clean install"
